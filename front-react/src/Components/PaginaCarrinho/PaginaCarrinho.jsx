@@ -44,11 +44,16 @@ function CarrinhoCompleto(props){
 
     let totalCompra = (totalCarrinho)  
 
-    function finalizaPedido(){
-        localStorage.clear()
-        props.setCarrinho([]) 
-        props.mudarTela(3)
-    }
+    function finalizaPedido() {
+        if (props.carrinho.length === 0) {
+          alert("Seu carrinho está vazio. Adicione produtos antes de finalizar o pedido.");
+          return;
+        }
+      
+        localStorage.clear();
+        props.setCarrinho([]);
+        props.mudarTela(3);
+      }
 
     return (
         <>
