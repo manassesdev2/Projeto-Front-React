@@ -135,7 +135,7 @@ const Home = (props) => {
 
   useEffect(() => {
     const novoCarrinho = localStorage.getItem("carrinho")
-    if (novoCarrinho !== null) {
+    if (novoCarrinho) {
       props.setCarrinho(JSON.parse(novoCarrinho))
     } else {
       localStorage.setItem("carrinho", [])
